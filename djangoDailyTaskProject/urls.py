@@ -22,7 +22,7 @@ from django.urls import re_path as url
 from rest_framework_swagger.views import get_swagger_view
 
 schema_view = get_swagger_view(title='Sawager API')
-
+# Creating the urlpatterns etc.
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dailytaskapp/v1/', include('dailytask_app.urls')),
