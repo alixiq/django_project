@@ -8,7 +8,6 @@ from django.db import connection
 from django.views import View
 
 
-# Create your views here.
 class DailyTaskView(viewsets.ModelViewSet):
     queryset = DailyTask.objects.all()
     serializer_class = DailyTaskSerializer

@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dailytask_app.apps.DailytaskAppConfig',
     'rest_framework',
-    'rest_framework_swagger'
+    "rest_framework_swagger",
+    "drf_yasg",
 ]
 
 MIDDLEWARE = [
@@ -124,6 +125,9 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# Adding the swagger ui frame dependency !
-REST_FRAMEWORK = {'DEFAULT_SCHEMA_CLASS':'rest_framework.schemas.coreapi.AutoSchema' }
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+CORS_ALLOWED_ORIGINS = [
+"http://localhost:3000"
+]

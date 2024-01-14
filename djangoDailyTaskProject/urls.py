@@ -19,12 +19,22 @@ from django.urls import path, include
 
 
 from django.urls import re_path as url
-from rest_framework_swagger.views import get_swagger_view
+from drf_yasg import openapi
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
 
-schema_view = get_swagger_view(title='Sawager API')
+scheme_view = get_schema_view(
+    openapi.Info(
+        title="DailyTaskProject",
+        default_version="v1",
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
+
 # Creating the urlpatterns etc.
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dailytaskapp/v1/', include('dailytask_app.urls')),
-    url(r'^$', schema_view)
+    path("swagger/",scheme_view.with_ui('swagger',cache_timeout=0),name="schema-swagger-ui"),
 ]
