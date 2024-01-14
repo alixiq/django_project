@@ -36,5 +36,5 @@ scheme_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dailytaskapp/v1/', include('dailytask_app.urls')),
-    path("swagger/",scheme_view.with_ui('swagger',cache_timeout=0),name="schema-swagger-ui"),
+    path("",scheme_view.with_ui('swagger',cache_timeout=0),name="schema-swagger-ui"),
 ]
